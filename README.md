@@ -81,10 +81,11 @@ USAGE: python ia2omeka.py [IA_collection_ID] [outfile.csv]
 SCRIPT: rm2mp4.py
 
 DEPENDS ON:
-1. ffmpeg (or avconv)mplayer
-2. libx264
-3. libfaac
-4. a plaintext list of URLs for the RealMedia streams
+1. ffmpeg (or avconv)
+2. mplayer
+3. libx264
+4. libfaac
+5. a plaintext list of URLs for the RealMedia streams
 
 PURPOSE: Dump RealMedia streeams from server and convert to mp4 audio
 
