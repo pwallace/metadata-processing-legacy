@@ -70,3 +70,16 @@ PURPOSE: Outputs a CSV from an Internet Archive suitable for ingest into Omeka. 
 
 USAGE: python ia2omeka.py [IA_collection_ID] [outfile.csv]
 ***
+
+SCRIPT: rm2mp4.py
+
+DEPENDS ON:
+ffmpeg (or avconv)mplayer
+libx264
+libfaac
+a plaintext list of URLs for the RealMedia streams
+
+PURPOSE: Dump RealMedia streeams from server and convert to mp4 audio
+
+USAGE: python script.py [urllist.txt]
+***
