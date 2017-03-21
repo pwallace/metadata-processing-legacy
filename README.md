@@ -50,3 +50,23 @@ PURPOSE: Outputs a CSV containing [IDENTIFIER, TITLE, SUBJECT[0], SUBJECT[1], et
 
 USAGE: python ia-fetch-subjects.py [collection_to_search] [outfile.csv]
 ***
+
+SCRIPT(s): cdm_x_dump.py
+
+PURPOSE: Fetches & dumps objects from CONTENTdm via an XML file created with pyoaiharvester.
+
+SEE: https://github.com/vphill/pyoaiharvester
+
+XML File Creation: python pyoaiharvest.py -l [http://server.domain.edu:port/oai/oai.php] -o [outfile.xml] -m [CONTENTdm_collectionID]
+
+DEPENDS ON: urllib2, etree
+***
+
+SCRIPT: ia2omeka.py
+
+DEPENDS ON: https://github.com/jjjake/internetarchive
+
+PURPOSE: Outputs a CSV from an Internet Archive suitable for ingest into Omeka.  Allows for easy migration/generation of Omeka collections from items in IA.
+
+USAGE: python ia2omeka.py [IA_collection_ID] [outfile.csv]
+***
