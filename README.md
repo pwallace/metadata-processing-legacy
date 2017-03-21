@@ -59,7 +59,14 @@ SEE: https://github.com/vphill/pyoaiharvester
 
 XML File Creation: python pyoaiharvest.py -l [http://server.domain.edu:port/oai/oai.php] -o [outfile.xml] -m [CONTENTdm_collectionID]
 
-DEPENDS ON: urllib2, etree
+DEPENDS ON: 
+1. urllib2
+2. etree
+
+USAGE: python script.py [IA_collection_ID] [outfile.csv]
+
+NOTE: The Omeka CSV importer wants only items of a single type (e.g., still images, documents, etc).  This script presumes all items in a collection are of mediatype:image (i.e., still images in jpg format).
+
 ***
 
 SCRIPT: ia2omeka.py
@@ -74,12 +81,14 @@ USAGE: python ia2omeka.py [IA_collection_ID] [outfile.csv]
 SCRIPT: rm2mp4.py
 
 DEPENDS ON:
-ffmpeg (or avconv)mplayer
-libx264
-libfaac
-a plaintext list of URLs for the RealMedia streams
+1. ffmpeg (or avconv)mplayer
+2. libx264
+3. libfaac
+4. a plaintext list of URLs for the RealMedia streams
 
 PURPOSE: Dump RealMedia streeams from server and convert to mp4 audio
 
 USAGE: python script.py [urllist.txt]
+
+NOTE: this method is SLOOOOOOW and wonky and resource-heavy.  The time to download and convert a .rm video is around 130% of the playback duration.
 ***
