@@ -1,5 +1,6 @@
 # metadata-processing
 
+
 *** ia-search.py ***
 
 DEPENDS ON: https://github.com/jjjake/internetarchive
@@ -8,7 +9,7 @@ PURPOSE: Returns a list of item identifiers in an Internet Archive collection.
 
 USAGE: python ia-search.py [collection_to_search]
 
-*** is-file-list.py ***
+*** ia-file-list.py ***
 
 DEPENDS ON: https://github.com/jjjake/internetarchive
 
