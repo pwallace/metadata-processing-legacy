@@ -41,3 +41,12 @@ PERFORMS THE FOLLOWING:
 
 USAGE: python iaCollectionCSVer.py [search_string] [name_of-collection_to_search] [name_of_new_collection] [outfile.csv]
 ***
+
+SCRIPT: ia-fetch-subjects.py
+
+DEPENDS ON: https://github.com/jjjake/internetarchive
+
+PURPOSE: Outputs a CSV containing [IDENTIFIER, TITLE, SUBJECT[0], SUBJECT[1], etc...]
+
+USAGE: python ia-fetch-subjects.py [collection_to_search] [outfile.csv]
+***
