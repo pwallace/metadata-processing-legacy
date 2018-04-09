@@ -93,3 +93,13 @@ USAGE: python script.py [urllist.txt]
 
 NOTE: this method is SLOOOOOOW and wonky and resource-heavy.  The time to download and convert a .rm video is around 130% of the playback duration.
 ***
+
+SCRIPT: fastimagecat.py
+
+DEPENDS ON:
+1. feh, PIL, or TerminalImageViewer (https://github.com/stefanhaustein/TerminalImageViewer) depending on preference
+2. json
+
+PURPOSE: Create descriptive metadata for each image in a directory as individual JSON files
+
+USAGE: python script.py [working_directory]
