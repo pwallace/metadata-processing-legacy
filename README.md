@@ -100,6 +100,15 @@ DEPENDS ON:
 1. feh, PIL, or TerminalImageViewer (https://github.com/stefanhaustein/TerminalImageViewer) depending on preference
 2. json
 
-PURPOSE: Create descriptive metadata for each image in a directory as individual JSON files
+PURPOSE: To speed descriptive data entry for large image batches. Reads "default.json" (see example below) and queries empty values (i.e., reads each key, if key = "" asks for user input). Creates descriptive metadata for each image in a directory as individual JSON files based on user input.
 
 USAGE: python script.py [working_directory]
+
+EXAMPLE CONFIG (named "defaults.json", will ask user for title, creator, and date):
+{
+"collection" : "this collection",
+"rights" : "This image licesed under a CC-4.0-By license."
+"title" : ""
+"creator" : ""
+"date" : ""
+}
