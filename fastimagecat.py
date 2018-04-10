@@ -1,4 +1,4 @@
-### Fast image cataloger - depends on TerminalImageViewer (tiv) and Pillow (PIL) OR feh to display images
+### Fast image cataloger - depends on TerminalImageViewer (tiv) and Pillow (PIL)
 
 from PIL import Image
 from pprint import pprint
@@ -43,7 +43,7 @@ def clearScreen():
 #	os.system('tiv -256 ' + imgfile)
 
 def displayImg(imgfile):
-  p = subprocess.Popen(["feh", imgfile])
+  p = subprocess.Popen(["feh", "-g=100x50", imgfile])
   return p
 
 #def displayImg(imgfile):
@@ -111,7 +111,7 @@ def getValue(field, checkinput=False):
   fieldvalue = raw_input(field + ": ")
   return fieldvalue
   
-def getValueCheck(fieldvalue, inputok=True):
+def getValueCheck(fieldvalue, inputok=False):
   if fieldvalue == '':
     inputok = query_empty_field()
   if fieldvalue != '':
@@ -127,8 +127,8 @@ def reviewRecord(metadata):
   print "* Record Review *"
   print "*****************\n"
   for key in metadata:
-    if key == "subjects":
-      print key
+    if key == "subject":
+      print key + " : "
       for item in metadata[key]:
         print "  " + item
     else:
@@ -143,13 +143,24 @@ def metadataPopulator(imgfile):
   recordData = readCollectionDefaults(imgfile)
   for key in recordData:
     inputok = False
-    if key == "subjects":
-      subjectList = list(recordData['subjects'])
-      recordData['subjects'] = addSubjects(subjectList)
+    
+    if key == "subject":
+      subjectList = list(recordData['subject'])
+      recordData['subject'] = addSubjects(subjectList)
+      
+#    if key == "date" and inputok is False:
+#      dateok = False
+#      while dateok is False:
+#        newvalue = getValue(key)
+#        print newvalue
+#        inputok = getValueCheck(newvalue)
+#        print newvalue + " is not a valid date! Please use YYYY, YYYY-MM, or YYYY-MM-DD format."
+
     while recordData[key] == "" and inputok is False:
-      newvalue = getValue(key)
-      inputok = getValueCheck(newvalue)
-      recordData[key] = newvalue
+      while inputok == False:
+        newvalue = getValue(key)
+        inputok = getValueCheck(newvalue)
+        recordData[key] = newvalue
   return recordData
 
 # Add subjects
@@ -157,8 +168,10 @@ def metadataPopulator(imgfile):
 def addSubjects(subjectList):
   moresubjects = False
   while moresubjects is False:
-    newsubject = getValue('subjects')
-    inputok = getValueCheck(newsubject)
+    inputok = False
+    while inputok is False:
+      newsubject = getValue('subject')
+      inputok = getValueCheck(newsubject)
     subjectList.append(newsubject)
     moresubjects = query_yes_no("Done adding subjects?", 'yes')
   return subjectList
