@@ -2,14 +2,11 @@
 
 from PIL import Image
 from pprint import pprint
-#from collections import defaultdict
 import sys
 import os
 import glob
 import json
 import subprocess
-#import csv
-#import webbrowser
 
 ### Basic Functions
 
@@ -147,15 +144,7 @@ def metadataPopulator(imgfile):
     if key == "subject":
       subjectList = list(recordData['subject'])
       recordData['subject'] = addSubjects(subjectList)
-      
-#    if key == "date" and inputok is False:
-#      dateok = False
-#      while dateok is False:
-#        newvalue = getValue(key)
-#        print newvalue
-#        inputok = getValueCheck(newvalue)
-#        print newvalue + " is not a valid date! Please use YYYY, YYYY-MM, or YYYY-MM-DD format."
-
+	
     while recordData[key] == "" and inputok is False:
       while inputok == False:
         newvalue = getValue(key)
