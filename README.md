@@ -1,6 +1,15 @@
 # metadata-processing
 
 ***
+SCRIPT: ia_check_missing_metadata.py
+
+DEPENDS ON: https://github.com/jjjake/internetarchive
+
+PURPOSE: Checks for a given metadata element in Internet Archive item records. Returns a list of item identifiers for records in which the element DOES NOT appear.
+
+USAGE: python ia_check_missing_metadata.py [list-of-identifiers.txt] [metadata element label]
+
+***
 SCRIPT: ia-search.py
 
 DEPENDS ON: https://github.com/jjjake/internetarchive
