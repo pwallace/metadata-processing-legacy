@@ -1,4 +1,4 @@
-## *note* : this collection of scripts is unmaintained, and most were written using significantly older versions of their component libraryes than currently available. A number are also still Python2.x and unlikely to be updated.
+### note: this collection of scripts is unmaintained, and most were written using significantly older versions of their component libraries than currently available. A number are also still Python2.x and unlikely to be updated.
 
 # metadata-processing
 
