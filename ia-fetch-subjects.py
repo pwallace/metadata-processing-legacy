@@ -11,7 +11,7 @@ search_collection = internetarchive.search_items('collection:' + collection)
 
 #searches collection, spits out csv with id, title, subjects
 
-print str(search_collection.num_found) + " items in collection"
+print(str(search_collection.num_found) + " items in collection")
 
 data = []
 rowcount = 0
@@ -20,7 +20,7 @@ for result in search_collection:
   item_identifier = result['identifier']
   item = internetarchive.get_item(item_identifier)
 
-  print "Downloading " + item_identifier + " ..."
+  print("Downloading " + item_identifier + " ...")
 
 
   title = item.item_metadata['metadata']['title']
